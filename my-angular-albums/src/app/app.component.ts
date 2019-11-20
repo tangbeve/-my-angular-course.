@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
 
   title = 'my-angular-albums';
   albumsArray: Album[];
+  titleCounter = 1;
+
 
   ngOnInit(): void {
     this.albumsArray = [
@@ -56,6 +58,8 @@ export class AppComponent implements OnInit {
         duration: "1:33:43",
         url: "https://www.allmusic.com/album/the-beatles-white-album-mw0000418113"
       }];
-    console.log(this.albumsArray);
+    const interval = setInterval(() => this.titleCounter++, 2000);
+    setTimeout(() => clearInterval(interval), 6000);
+    // console.log(this.albumsArray);
   }
 }
